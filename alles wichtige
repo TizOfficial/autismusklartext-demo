@@ -1,0 +1,23 @@
+ // Contact form handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject') || 'Kontaktanfrage';
+            const message = formData.get('message');
+            
+            // Create mailto link
+            const mailtoLink = `mailto:kontakt@autismus-klartext.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nE-Mail: ${email}\n\nNachricht:\n${message}`)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Dein E-Mail-Programm sollte sich nun öffnen. Falls nicht, sende bitte eine E-Mail an kontakt@autismus-klartext.de');
+        });
+    }
