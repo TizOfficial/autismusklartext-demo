@@ -873,6 +873,58 @@ header.scrolled {
     flex-wrap: wrap;
 }
 
+/* Resource Grid Styles */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.resource-item {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.resource-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.resource-item h3 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.resource-item p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.resource-link {
+    color: var(--accent-green);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.resource-link:hover {
+    text-decoration: underline;
+}
+
+.search-tip {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    color: var(--text-dark);
+    font-weight: 500;
+    border-left: 4px solid var(--accent-green);
+}
+
 /* Footer */
 footer {
     background: var(--text-dark);
