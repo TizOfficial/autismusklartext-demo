@@ -190,6 +190,14 @@ function acceptCookies() {
     }
 }
 
+// Close donation popup function
+function closeDonationPopup() {
+    const donationPopup = document.getElementById('donationPopup');
+    if (donationPopup) {
+        donationPopup.classList.remove('show');
+    }
+}
+
 // Accessibility improvements
 document.addEventListener('DOMContentLoaded', function() {
     // Add main landmark
@@ -205,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
             img.alt = '';
         }
     });
-    
+
     // Add focus indicators for keyboard navigation
     const focusableElements = document.querySelectorAll('a, button, input, textarea, select');
     focusableElements.forEach(element => {
