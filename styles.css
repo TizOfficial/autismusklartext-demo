@@ -758,6 +758,90 @@ header.scrolled {
     transform: translateY(-2px);
 }
 
+/* Donation Popup */
+.donation-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1002;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.donation-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.donation-popup-content {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+    transform: translateY(20px);
+    transition: var(--transition);
+}
+
+.donation-popup.show .donation-popup-content {
+    transform: translateY(0);
+}
+
+.donation-popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: var(--transition);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donation-popup-close:hover {
+    color: var(--text-dark);
+    transform: scale(1.1);
+}
+
+.donation-popup-content h3 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.donation-popup-content p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.donation-popup-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.donation-popup-buttons .btn {
+    flex: 1;
+    min-width: 120px;
+}
+
 /* About Page Specific Styles */
 .about-hero {
     background: linear-gradient(135deg, var(--primary-green) 0%, var(--white) 100%);
