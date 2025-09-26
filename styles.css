@@ -285,7 +285,7 @@ header.scrolled {
     width: 100%;
     height: 250px;
     overflow: hidden;
-    position: relative;
+    position: right;
     background: var(--white);
     display: flex;
     align-items: center;
