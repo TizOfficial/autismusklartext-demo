@@ -286,17 +286,61 @@ header.scrolled {
   }
 }
 
-/* Handy (<600px): 1 Spalte */
+/* Standard: Grid bleibt sichtbar, Slider aus */
+.mobile-slider { display: none; }
+
+/* Handy: Grid ausblenden, Slider anzeigen */
 @media (max-width: 599px) {
-  .products-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .products-grid  .product-card:nth-child(4) {
-    grid-column: auto; /* zurücksetzen */
+  .products-grid { display: none; }
+  .mobile-slider { display: block; }
+}
+
+/* Slides im Slider */
+.mobile-slider .product-card {
+  width: 100%;
+}
+
+/* ---------- Puzzle-Pagination ---------- */
+
+/* Puzzle-Icon als Maskendatei (SVG) */
+:root {
+  --puzzle-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 2h6v3a2 2 0 1 0 0 4v3h-3a2 2 0 1 1-4 0H5V9h3a2 2 0 1 1 0-4V2z'/%3E%3C/svg%3E");
+}
+
+/* Pagination Bullets */
+.mobile-slider .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  opacity: 1;
+  background: #B8C1FF;       /* Farbe inaktiv */
+  border-radius: 0;
+
+  -webkit-mask-image: var(--puzzle-mask);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-image: var(--puzzle-mask);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  transition: transform .2s ease, background-color .2s ease;
+  margin: 0 6px !important;
+}
+
+/* Aktiver Bullet */
+.mobile-slider .swiper-pagination-bullet-active {
+  background: #5562FF;       /* Farbe aktiv */
+  transform: scale(1.2);
+}
+
+/* Fallback: runde Punkte, falls Masken nicht unterstützt */
+@supports not (mask-image: var(--puzzle-mask)) {
+  .mobile-slider .swiper-pagination-bullet {
+    border-radius: 50%;
   }
 }
+
 
 
 
