@@ -267,7 +267,7 @@ header.scrolled {
     gap: 2rem;
 }
 
-.products-grid .product-card:nth-last-child(2) {
+.products-grid  .product-card:nth-last-child(2) {
     grid-column: 2;
 }
 
