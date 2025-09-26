@@ -261,24 +261,27 @@ header.scrolled {
     color: var(--text-dark);
 }
 
-/* Standard: Desktop (ab 900px) -> 3 Spalten */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-/* 4. Karte in die Mitte der 2. Reihe schieben */
-.products-grid .product-card:nth-child(4) {
-  grid-column: 2;
-}
-
-/* Tablet (600–899px): nur 2 Spalten */
-@media (max-width: 899px) {
+/* Desktop ab 900px: 3 Spalten */
+@media (min-width: 900px) {
   .products-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
-  .products-grid .product-card:nth-child(4) {
+  /* 4. Karte in die Mitte der 2. Reihe */
+  .products-grid  .product-card:nth-child(4) {
+    grid-column: 2;
+  }
+}
+
+/* Tablet (600–899px): 2 Spalten */
+@media (min-width: 600px) and (max-width: 899px) {
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .products-grid  .product-card:nth-child(4) {
     grid-column: auto; /* zurücksetzen */
   }
 }
@@ -286,9 +289,15 @@ header.scrolled {
 /* Handy (<600px): 1 Spalte */
 @media (max-width: 599px) {
   .products-grid {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .products-grid  .product-card:nth-child(4) {
+    grid-column: auto; /* zurücksetzen */
   }
 }
+
 
 
 .product-card {
