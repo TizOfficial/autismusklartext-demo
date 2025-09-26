@@ -263,10 +263,16 @@ header.scrolled {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, 320px);
     gap: 2rem;
-    margin-bottom: 3rem;
     justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .products-grid{
+        grid-template-colums: 1fr;
+        justify-content: stretch;
+    }
 }
 
 .product-card {
