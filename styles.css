@@ -261,18 +261,18 @@ header.scrolled {
     color: var(--text-dark);
 }
 
-/* Desktop ab 900px: 3 Spalten */
-@media (min-width: 900px) {
-  .products-grid {
-    display: grid !important ;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 2rem !important;
-  }
-  /* 4. Karte in die Mitte der 2. Reihe */
-  .products-grid  .product-card:nth-child(4) {
-    grid-column: 2 !important;
-  }
+/* Bücher-Grid: 3 oben, 2 unten zentriert */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
 }
+
+/* schiebt die 4. Karte in Spalte 2 -> unten stehen 2 Karten mittig */
+.products-grid .product-card:nth-child(4) {
+  grid-column: 2;
+}
+
 
 /* Tablet (600–899px): 2 Spalten */
 @media (min-width: 600px) and (max-width: 899px) {
