@@ -262,13 +262,13 @@ header.scrolled {
 }
 
 .products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minimax (0,1fr));
-    gap: 2rem;
+    display: grid !important;
+    grid-template-columns: repeat(3, minimax (0,1fr)) !important;
+    gap: 2rem !important;
 }
 
-.products-grid  .product-card:nth-last-child(2) {
-    grid-column: 2;
+.products-grid  .product-card:nth-last-child(4) {
+    grid-column: 2 !important;
 }
 
 
