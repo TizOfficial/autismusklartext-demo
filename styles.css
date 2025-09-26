@@ -261,52 +261,40 @@ header.scrolled {
     color: var(--text-dark);
 }
 
-.products-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax (0,1fr)) !important;
-    gap: 2rem !important;
-}
-
-.products-grid  .product-card:nth-last-child(4) {
-    grid-column: 2 !important;
-}
-
-/* Desktop: IMMER 3 Spalten */
+/* Desktop: exakt 3 Spalten + 2 zentrierte in Reihe 2, nur für die 5 Bücher */
 @media (min-width: 900px) {
   .products-grid {
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 2rem !important;
+
+    /* Explizites Layout mit leeren Zellen zum Zentrieren der 2. Reihe */
+    grid-template-areas:
+      "a b c"
+      ". d e";
   }
+
+  /* Weist den 5 Karten feste Positionen zu */
+  .products-grid .product-card { grid-area: auto !important; min-width: 0; }
+  .products-grid .product-card:nth-child(1) { grid-area: a !important; }
+  .products-grid .product-card:nth-child(2) { grid-area: b !important; }
+  .products-grid .product-card:nth-child(3) { grid-area: c !important; }
+  .products-grid .product-card:nth-child(4) { grid-area: d !important; }
+  .products-grid .product-card:nth-child(5) { grid-area: e !important; }
+
+  /* Falls du früher sowas hattest, neutralisiert das hier Konflikte */
+  .products-grid .product-card:nth-child(4) { grid-column: auto !important; }
 }
 
-/* Tablet */
+/* Tablet/Handy responsiv (optional) */
 @media (min-width: 600px) and (max-width: 899px) {
-  .products-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 1.5rem !important;
-  }
+  .products-grid { display: grid !important; grid-template-columns: repeat(2, minmax(0,1fr)) !important; gap: 1.5rem !important; }
 }
-
-/* Handy */
 @media (max-width: 599px) {
-  .products-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
-  }
+  .products-grid { display: grid !important; grid-template-columns: 1fr !important; gap: 1rem !important; }
 }
 
-/* 4. Karte in die Mitte der 2. Reihe (nur auf >=900px sinnvoll) */
-@media (min-width: 900px) {
-  .products-grid .product-card:nth-child(4) {
-    grid-column: 2 !important;
-  }
-}
-
-/* Verhindert, dass Inhalte Spalten sprengen */
-.product-card { min-width: 0; }
+/* Bild-/Inhalt-Safety */
 .product-card img { width: 100%; height: auto; display: block; object-fit: contain; }
 
 
