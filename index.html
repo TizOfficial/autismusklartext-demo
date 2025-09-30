@@ -419,25 +419,26 @@ Social-Media-Inhalte, die Mut machen, sensibilisieren und Austausch fördern.</p
     
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-   
-        new Swiper('.mobile-slider', {
-          spaceBetween: 20,
-          pagination: { 
-            el: '.mobile-slider .swiper-pagination', 
-            clickable: true 
-          },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-          slidesPerView: 1,
-          breakpoints: {
-            600: { slidesPerView: 2 },
-            900: { slidesPerView: 3 },
-          },
-        });
-
+    
+    <!-- Deine Initialisierung: MUSS in <script> stehen -->
+    <script>
+      new Swiper('.mobile-slider', {
+        spaceBetween: 20,
+        pagination: {
+          el: '.mobile-slider .swiper-pagination',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        slidesPerView: 1,
+        breakpoints: {
+          600: { slidesPerView: 2 },
+          900: { slidesPerView: 3 },
+        },
+      });
+    </script>
 
 
           
