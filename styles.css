@@ -377,7 +377,7 @@ header.scrolled {
     color: var(--white);
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     font-weight: 600;
 }
 
