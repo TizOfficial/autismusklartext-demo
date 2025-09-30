@@ -309,6 +309,17 @@ header.scrolled {
 /* Optional: Abstand der Pagination anpassen */
 .mobile-slider .swiper-pagination { bottom: 10px !important; }
 
+.swiper-button-prev,
+.swiper-button-next {
+  color: #2F9E6E;   /* Grünton passend zu den Puzzle-Punkten */
+  width: 40px;
+  height: 40px;
+}
+
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  opacity: 0.3; /* wenn nicht klickbar */
+}
 
 
 
