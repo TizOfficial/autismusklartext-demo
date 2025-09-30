@@ -309,18 +309,33 @@ header.scrolled {
 /* Optional: Abstand der Pagination anpassen */
 .mobile-slider .swiper-pagination { bottom: 10px !important; }
 
+/* Pfeile im Puzzle-Grünton, mit Kreis-Hintergrund */
 .swiper-button-prev,
 .swiper-button-next {
-  color: #2F9E6E;   /* Grünton passend zu den Puzzle-Punkten */
+  color: var(--puzzle-green-active);   /* gleiche Farbe wie aktive Puzzle-Punkte */
   width: 40px;
   height: 40px;
+  border-radius: 50%;                  /* Kreisform */
+  background: rgba(47, 158, 110, 0.15); /* leicht grüner, transparenter Kreis */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-.swiper-button-prev.swiper-button-disabled,
-.swiper-button-next.swiper-button-disabled {
-  opacity: 0.3; /* wenn nicht klickbar */
+/* Hover-Effekt */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: var(--puzzle-green-active);
+  color: #fff;                         /* Pfeil wird weiß */
+  transform: scale(1.05);              /* kleiner „Pop“-Effekt */
 }
 
+/* Pfeil-Symbole kleiner anpassen */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px;                     /* Symbolgröße (nicht das ganze Feld) */
+}
 
 
 .product-card {
