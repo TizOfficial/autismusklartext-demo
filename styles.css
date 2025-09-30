@@ -261,85 +261,53 @@ header.scrolled {
     color: var(--text-dark);
 }
 
-/* Bücher-Grid: 3 oben, 2 unten zentriert */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
-}
+/* --- Slider ist IMMER sichtbar (wir nutzen kein Grid mehr) --- */
+.mobile-slider { display: block; }
 
-/* schiebt die 4. Karte in Spalte 2 -> unten stehen 2 Karten mittig */
-.products-grid .product-card:nth-child(4) {
-  grid-column: 2;
-}
-
-
-/* Tablet (600–899px): 2 Spalten */
-@media (min-width: 600px) and (max-width: 899px) {
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-  .products-grid  .product-card:nth-child(4) {
-    grid-column: auto; /* zurücksetzen */
-  }
-}
-
-/* Standard: Grid bleibt sichtbar, Slider aus */
-.mobile-slider { display: none; !important}
-
-/* Handy: Grid ausblenden, Slider anzeigen */
-@media (max-width: 599px) {
-  .products-grid { display: none; }
-  .mobile-slider { display: block; }
-}
-
-/* Slides im Slider */
-.mobile-slider .product-card {
-  width: 100%;
-}
-
-/* ---------- Puzzle-Pagination ---------- */
-
-/* Puzzle-Icon als Maskendatei (SVG) */
+/* --- Puzzleteil-Pagination (größer + Grünton) --- */
+/* Meine Vorschlag-Farben passend ruhig/freundlich:
+   Inaktiv:  #54C18D  (sanftes Grün)
+   Aktiv:    #2F9E6E  (kräftigeres Grün)
+*/
 :root {
-  --puzzle-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 2h6v3a2 2 0 1 0 0 4v3h-3a2 2 0 1 1-4 0H5V9h3a2 2 0 1 1 0-4V2z'/%3E%3C/svg%3E");
+  --puzzle-green: #54C18D;  /* inaktiv */
+  --puzzle-green-active: #2F9E6E; /* aktiv */
 }
 
-/* Pagination Bullets */
+/* SVG-Maske (Puzzleteil) */
 .mobile-slider .swiper-pagination-bullet {
-  width: 14px;
-  height: 14px;
+  width: 22px;              /* größer machen */
+  height: 22px;
+  margin: 0 8px !important;
   opacity: 1;
-  background: #B8C1FF;       /* Farbe inaktiv */
+  background: var(--puzzle-green);
   border-radius: 0;
 
-  -webkit-mask-image: var(--puzzle-mask);
+  /* Puzzle-Maske */
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 2h6v3a2 2 0 1 0 0 4v3h-3a2 2 0 1 1-4 0H5V9h3a2 2 0 1 1 0-4V2z'/%3E%3C/svg%3E");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
-  mask-image: var(--puzzle-mask);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 2h6v3a2 2 0 1 0 0 4v3h-3a2 2 0 1 1-4 0H5V9h3a2 2 0 1 1 0-4V2z'/%3E%3C/svg%3E");
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
 
   transition: transform .2s ease, background-color .2s ease;
-  margin: 0 6px !important;
 }
 
-/* Aktiver Bullet */
 .mobile-slider .swiper-pagination-bullet-active {
-  background: #5562FF;       /* Farbe aktiv */
+  background: var(--puzzle-green-active);
   transform: scale(1.2);
 }
 
-/* Fallback: runde Punkte, falls Masken nicht unterstützt */
-@supports not (mask-image: var(--puzzle-mask)) {
-  .mobile-slider .swiper-pagination-bullet {
-    border-radius: 50%;
-  }
+/* Fallback: runde Punkte, falls Masken nicht unterstützt werden */
+@supports not (mask-image: url("")) {
+  .mobile-slider .swiper-pagination-bullet { border-radius: 50%; }
 }
+
+/* Optional: Abstand der Pagination anpassen */
+.mobile-slider .swiper-pagination { bottom: 10px !important; }
 
 
 
