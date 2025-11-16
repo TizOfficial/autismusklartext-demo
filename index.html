@@ -86,7 +86,12 @@
         <section class="prducths">
             <div class="cotainer">
                 <h2> NEU</h2>
-                <iframe src="https://koalendar.com/e/autismus-klartext-sprechstunde?embed=true" width="100%" height="800"></iframe>
+                <!-- Koalendar Inline Embed Start -->
+                <div id="inline-widget-autismusklartext-sprechstunde"></div>
+                <script>window.Koalendar=window.Koalendar||function(){(Koalendar.props=Koalendar.props||[]).push(arguments)};</script>
+                <script async src="https://koalendar.com/assets/widget.js"></script>
+                <script>Koalendar('inline', {"url":"https://koalendar.com/e/autismusklartext-sprechstunde","selector":"#inline-widget-autismusklartext-sprechstunde"});</script>
+                <!-- Koalendar Inline Embed End -->
             </div>
         </section>
         <section class="products">
