@@ -1828,3 +1828,83 @@ textarea:focus {
 .skip-link:focus {
     top: 0;
 }
+
+
+/* Kurs */
+
+/* =========================
+   COURSE PAGE STYLES
+========================= */
+
+.course-hero {
+    background: linear-gradient(135deg, var(--primary-green), var(--white));
+    padding: 160px 0 100px;
+    text-align: center;
+}
+
+.course-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subline {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: var(--text-light);
+}
+
+.course-section {
+    max-width: 800px;
+    margin: 4rem auto;
+}
+
+.course-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.course-section p {
+    font-size: 1.05rem;
+}
+
+.course-section ul {
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.course-section li {
+    margin-bottom: 0.5rem;
+}
+
+.course-price-box {
+    background: var(--primary-green);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    max-width: 600px;
+    margin: 4rem auto;
+}
+
+.course-price-box .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-green);
+    margin: 1rem 0;
+}
+
+.course-final-cta {
+    background: var(--light-gray);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.course-final-cta h2 {
+    margin-bottom: 1rem;
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
