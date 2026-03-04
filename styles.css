@@ -1961,7 +1961,7 @@ textarea:focus {
 }
 
 .course-price-box .price {
-  font-size: 3rem;
+  font-size: 3rem; !important 
   font-weight: 750;
   color: var(--green-strong);
   margin: 0.75rem 0 0.5rem;
