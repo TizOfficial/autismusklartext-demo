@@ -1908,3 +1908,54 @@ textarea:focus {
     padding: 1rem 2rem;
     font-size: 1.1rem;
 }
+
+/* =========================
+   SPECIFIC COURSE PAGE ADJUSTMENTS
+========================= */
+
+/* Force larger hero spacing */
+.course-hero {
+    padding-top: 180px !important;
+    padding-bottom: 120px !important;
+}
+
+/* Fix font intensity */
+.course-section p,
+.course-section ul {
+    color: #333333;
+}
+
+/* Fix headings specifically */
+.course-section h2 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Better list spacing */
+.course-section li {
+    margin-bottom: 0.75rem;
+}
+
+/* Fix button look */
+.btn-primary.btn-large {
+    background-color: #5c7cfa;
+    color: #ffffff;
+    border: none;
+}
+
+/* Center CTA spacing */
+.course-final-cta {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Improve responsiveness */
+@media (max-width: 768px) {
+    .course-hero h1 {
+        font-size: 2.4rem;
+    }
+    .course-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
